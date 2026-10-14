@@ -28,6 +28,21 @@ int main() {
 
 	std::cout << "Updated value: " << number.get() << "\n";
 	
+	// Exercise 2.1
+	Knight knight{"Arthur"};
+	knight.setWeapon("Sword");
+	knight.attack();
+
+	auto copy = knight.clone();
+	copy->attack();
+
+	// Exercise 2.2
+	homework::Sorcerer sorcerer{"Test Sorcerer"};
+	sorcerer.setAbility("spel");
+	sorcerer.attack();
+	
+	auto sorcerer_clone = sorcerer.clone();
+	sorcerer_clone->attack();
 	return 0;
 	
 }
