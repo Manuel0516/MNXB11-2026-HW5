@@ -43,6 +43,13 @@ int main() {
 	
 	auto sorcerer_clone = sorcerer.clone();
 	sorcerer_clone->attack();
+	
+	// Exercise 2.3
+	homework::Duel<homework::Knight, homework::Sorcerer> duel(
+	&knight, &sorcerer
+	);
+
+	auto winner = duel.fight();
 	return 0;
 	
 }

@@ -96,5 +96,16 @@ namespace homework {
   // - print to std::cout "<name> wins the duel!\n"
   // - return a std::unique_ptr<Entity> to the winner (use clone() to copy the object)
 
+  template <typename T1, typename T2>
+  struct Duel {
+	  Duel(T1* first, T2* second);
+
+	  std::unique_ptr<Entity> fight();
+
+  private:
+	  T1* first_;
+	  T2* second_;
+  };
+
 } // namespace homework
 

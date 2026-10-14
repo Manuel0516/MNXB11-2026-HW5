@@ -32,4 +32,25 @@ namespace homework {
 		ability = new_ability;	
 	}
 
+	template <typename T1, typename T2>
+	Duel<T1, T2>::Duel(T1* first, T2*second)
+		: first_{first}, second_{second}{}
+	
+	template <typename T1, typename T2>
+	std::unique_ptr<Entity> Duel<T1, T2>::fight() {
+		first_->attack();
+		second_->attack();
+	
+		auto random_number = dist(gen);
+
+		if (random_number < 0.5) {
+			std::cout << first_->getName() << " wins the duel!\n";
+			return first_->clone();
+		} else {
+			std::cout << second_->getName() << " wins the duel!\n";
+			return second_->clone();
+		}
+	}
+
+	template struct Duel<Knight, Sorcerer>;
 } // namespace homework
